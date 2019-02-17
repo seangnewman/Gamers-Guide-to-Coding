@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Number Guess Lesson 2</title>
+  <style>
+    p{
+      font-family: "Arial Black", Gadget, sans-serif;
+    }
+    input{
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.1em;
+    }
+    #guess{
+      border: 1px solid red;
+      width: 30px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Start the visible page -->
+  <main>
+    <p id="prompt">I'm thinking of a number from 1 to 10.  Can you guess it?</p>
+    <input id="guess" type="text" value=""/>
+    <input type="button" value="Guess" onclick="numberGuess();" />
+  </main>
+  <script>
+    function numberGuess(){
+      var randomNumber = Math.floor( (Math.random() * 10) + 1);
+      console.log(randomNumber);
+      var yourGuess = document.getElementById("guess");
+
+      if(yourGuess.value == randomNumber){
+        document.getElementById("prompt").innerHTML = "That is correct guess!";
+      }else{
+        document.getElementById("prompt").innerHTML = "Sorry,  try again?";
+      } // end if
+    }
+  </script>
+  
+</body>
+</html>
